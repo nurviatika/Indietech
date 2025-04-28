@@ -100,6 +100,7 @@
               </label>
             </div>
           </div>
+          
           <div class="flex flex-col gap-3 pt-6">
             <button
               type="submit"
@@ -122,7 +123,7 @@
     <div
     id="successPopup"
     class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-30 hidden z-50">
-    <div class="bg-white p-6 rounded-lg shadow-lg w-[466px] relative">
+    <div class="bg-white md:p-6 p-3 rounded-lg shadow-lg md:w-[466px] w-[360px] relative">
       <button
         onclick="closePopup()"
         class="absolute top-6 right-6 text-[#1E1E1E] hover:text-gray-800 text-2xl"
@@ -132,7 +133,7 @@
 
       <div class="pt-8 pb-24 px-8 text-start">
         <h2 class="text-2xl font-semibold mb-2 font-inter">Register Successful</h2>
-        <p class="text-[#1E1E1E] font-normal text-base font-inter">
+        <p class="text-[#1E1E1E] font-normal md:text-base text-sm font-inter">
           You have successfully registered your account
         </p>
       </div>
