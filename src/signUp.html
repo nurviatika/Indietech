@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up</title>
+  <link href="https://fonts.cdnfonts.com/css/bricolage-grotesque" rel="stylesheet" />
+  <link href="https://fonts.cdnfonts.com/css/inter" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            bricolage: ["Bricolage Grotesque", "sans-serif"],
+            inter: ["Inter", "sans-serif"],                                     
+          },
+          // screens: {
+          //   sm: "425px",
+          //   smd: "568px",
+          //   md: "768px",
+          //   mdlg: "990px",
+          //   lg: "1024px",
+          //   xl: "1200px",
+          // },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    body {
+      overflow-x: hidden;
+    }
+  </style>
+</head>
+
+<body class="font-bricolage">
+  <section class="flex flex-col md:flex-row flex-1 min-h-screen">
+    <div class="hidden lg:block lg:w-1/2 bg-gray-200"></div>
+    <div class="w-full lg:w-1/2 bg-white flex flex-col justify-end px-6 md:px-16 lg:px-28 pb-20 lg:pb-40">
+      <h1 class="text-3xl font-semibold text-start pt-12 pb-24 lg:pb-52">
+        Indietech
+      </h1>
+      <h2 class="text-3xl font-bold text-start pb-5">Register</h2>
+      <div class="border rounded-lg px-6 py-6">
+
+        <form class="flex flex-col gap-6" onsubmit="showPopup(event)">
+          <div class="flex flex-col gap-2">
+            <label class="block text-sm font-medium">First Name</label>
+            <input
+              type="text"
+              placeholder="Enter your first name"
+              class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-stone-400"
+            />
+          </div>
+          <div class="flex flex-col gap-2">
+            <label class="block text-sm font-medium">Last Name</label>
+            <input
+              type="text"
+              placeholder="Enter your last name"
+              class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-stone-400"
+            />
+          </div>
+          <div class="flex flex-col gap-2">
+            <label class="block text-sm font-medium">Email</label>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-stone-400"
+            />
+          </div>
+          <div class="flex flex-col gap-2">
+            <label class="block text-sm font-medium">Password</label>
+            <input
+              type="password"
+              placeholder="Enter your password"
+              class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-stone-400"
+            />
+          </div>
+          <div class="flex flex-col gap-3 pt-4">
+            <div class="flex items-start gap-3">
+              <input
+                type="checkbox"
+                class="w-4 h-4 border border-gray-400 rounded mt-1"
+              />
+              <label class="text-sm text-black font-normal leading-snug">
+                User Confirmation Privacy policy
+              </label>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <input
+                type="checkbox"
+                class="w-4 h-4 border border-gray-400 rounded mt-1"
+              />
+              <label class="text-sm text-gray-400 font-normal leading-snug max-w-xs">
+                By checking this you agree with our terms & conditions about
+                user privacy
+              </label>
+            </div>
+          </div>
+          <div class="flex flex-col gap-3 pt-6">
+            <button
+              type="submit"
+              class="w-full bg-black text-white py-3 rounded-md hover:bg-gray-800 transition"
+            >
+              Register
+            </button>
+            <button
+              type="button"
+              class="w-full bg-black text-white py-3 rounded-md hover:bg-gray-800 transition"
+            >
+              Register Using Google Account
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+    <div
+    id="successPopup"
+    class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-30 hidden z-50">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-[466px] relative">
+      <button
+        onclick="closePopup()"
+        class="absolute top-6 right-6 text-[#1E1E1E] hover:text-gray-800 text-2xl"
+      >
+        &times;
+      </button>
+
+      <div class="pt-8 pb-24 px-8 text-start">
+        <h2 class="text-2xl font-semibold mb-2 font-inter">Register Successful</h2>
+        <p class="text-[#1E1E1E] font-normal text-base font-inter">
+          You have successfully registered your account
+        </p>
+      </div>
+    </div>
+  </div>
+  </section>
+  
+  <script>
+    function showPopup(event) {
+      event.preventDefault();
+      document.getElementById("successPopup").classList.remove("hidden");
+    }
+
+    function closePopup() {
+      document.getElementById("successPopup").classList.add("hidden");
+    }
+  </script>
+</body>
+</html>
