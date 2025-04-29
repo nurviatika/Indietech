@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LandingPage</title>
+    <link
+      href="https://fonts.cdnfonts.com/css/bricolage-grotesque"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.cdnfonts.com/css/inter" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              putih: "#FFFFFF",
+              hitam: "#000000",
+              abu: "#D9D9D9",
+            },
+            fontFamily: {
+              bricolage: ["Bricolage Grotesque", "sans-serif"],
+              inter: ["Inter", "sans-serif"],
+            },
+            container: {
+              center: true,
+              padding: "1.5rem",
+              screens: {
+                lg: "1140px",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        overflow-x: hidden;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header
+      id="navbar"
+      class="bg-putih pt-[47px] pb-[63px] flex justify-center items-center fixed w-full z-50 top-0 h-16 transition-all duration-300"
+    >
+      <nav class="container flex justify-between items-center w-full">
+        <div
+          class="flex items-center gap-[10px] font-bold text-hitam text-2xl font-bricolage"
+        >
+          <span>Indietech</span>
+        </div>
+
+        <ul
+          class="md:hidden hidden lg:flex gap-10 text-hitam text-base font-bricolage font-normal"
+        >
+          <li><a href="#" class="hover:text-hitam">This Is Menu</a></li>
+          <li><a href="#" class="hover:text-hitam">This Is Menu</a></li>
+          <li><a href="#" class="hover:text-hitam">This Is Menu</a></li>
+          <li><a href="#" class="hover:text-hitam">This Is Menu</a></li>
+        </ul>
+
+        <div class="flex gap-2 items-center md:hidden hidden lg:flex">
+          <a href="/src/signUp.html">
+            <button
+              class="border border-hitam text-hitam font-bricolage text-sm px-6 py-3 rounded-full hover:bg-hitam hover:text-putih transition"
+            >
+            Register
+            </button>
+          </a>
+          <a href="/src/login.html">
+            <button
+              class="border border-hitam text-hitam font-bricolage text-sm px-6 py-3 rounded-full hover:bg-hitam hover:text-putih transition"
+            >
+              Login
+            </button>
+          </a>
+        </div>
+
+        <button id="menu-toggle" class="lg:hidden flex flex-col gap-[5px]">
+          <span class="w-6 h-[2px] bg-hitam"></span>
+          <span class="w-6 h-[2px] bg-hitam"></span>
+          <span class="w-6 h-[2px] bg-hitam"></span>
+        </button>
+      </nav>
+
+      <ul
+        id="nav-links"
+        class="container lg:hidden fixed top-0 right-0 w-full h-[100vh] bg-putih shadow-lg py-8 text-hitam text-sm font-medium transform -translate-y-full transition-transform duration-300 ease-in-out z-40 font-bricolage"
+      >
+        <span
+          id="close-menu"
+          class="absolute top-4 right-6 w-6 h-6 cursor-pointer flex items-center justify-center"
+        >
+          <span class="block w-6 h-[3px] bg-hitam rotate-45 absolute"></span>
+          <span class="block w-6 h-[3px] bg-hitam -rotate-45 absolute"></span>
+        </span>
+
+        <li class="px-6 py-4">
+          <a href="#" class="hover:text-hitam">This Is Menu</a>
+        </li>
+        <li class="px-6 py-4">
+          <a href="#" class="hover:text-hitam">This Is Menu</a>
+        </li>
+        <li class="px-6 py-4">
+          <a href="#" class="hover:text-hitam">This Is Menu</a>
+        </li>
+        <li class="px-6 py-4">
+          <a href="#" class="hover:text-hitam">This Is Menu</a>
+        </li>
+
+        <li class="ml-[25px] flex justify-start gap-4">
+          <a href="/src/signUp.html">
+            <button
+              class="border border-hitam text-hitam font-bricolage text-sm px-6 py-3 rounded-full hover:bg-hitam hover:text-putih transition"
+            >
+              Register
+            </button>
+          </a>
+          <a href="/src/login.html">
+            <button
+              class="border border-hitam text-hitam font-bricolage text-sm px-6 py-3 rounded-full hover:bg-hitam hover:text-putih transition"
+            >
+              Login
+            </button>
+          </a>
+        </li>
+      </ul>
+    </header>
+
+    <section class="pt-[246px] pb-[250px] bg-abu min-h-screen">
+      <div class="container">
+        <div class="max-w-[527px]">
+          <h1
+            class="md:text-[90px] lg:text-[128px] text-[80px] leading-none font-bricolage text-hitam font-semibold"
+          >
+            This <br>Some <br>title
+          </h1>
+          <button
+            class="mt-6 border border-hitam text-hitam font-bricolage text-sm px-6 py-3 rounded-full hover:bg-hitam hover:text-putih transition"
+          >
+            Learn More
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const navLinks = document.getElementById("nav-links");
+      const closeMenu = document.getElementById("close-menu");
+
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.remove("-translate-y-full");
+        navLinks.classList.add("translate-y-0");
+      });
+
+      closeMenu.addEventListener("click", () => {
+        navLinks.classList.remove("translate-y-0");
+        navLinks.classList.add("-translate-y-full");
+      });
+    </script>
+  </body>
+</html>

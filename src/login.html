@@ -3,90 +3,118 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign Up</title>
-    <link href="https://fonts.cdnfonts.com/css/bricolage-grotesque" rel="stylesheet" />
-    <link href="https://fonts.cdnfonts.com/css/inter" rel="stylesheet">
+    <title>LandingPage</title>
+    <link
+      href="https://fonts.cdnfonts.com/css/bricolage-grotesque"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.cdnfonts.com/css/inter" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
+            colors: {
+              putih: "#FFFFFF",
+              hitam: "#000000",
+              abu: "#D9D9D9",
+              abu_text: "#B3B3B3",
+              hitam_text: "#1E1E1E",
+            },
             fontFamily: {
               bricolage: ["Bricolage Grotesque", "sans-serif"],
-              inter: ["Inter", "sans-serif"],                                     
+              inter: ["Inter", "sans-serif"],
             },
-            // screens: {
-            //   sm: "425px",
-            //   smd: "568px",
-            //   md: "768px",
-            //   mdlg: "990px",
-            //   lg: "1024px",
-            //   xl: "1200px",
-            // },
+            container: {
+              center: true,
+              padding: "1.5rem",
+              screens: {
+                lg: "1140px",
+              },
+            },
           },
         },
       };
     </script>
-  
     <style>
       body {
         overflow-x: hidden;
       }
     </style>
   </head>
-  
+
   <body>
-    <section class="flex flex-col md:flex-row flex-1">
-      <div class="hidden lg:block lg:w-[720px] bg-gray-200"></div>
-      <div class="w-full lg:w-1/2 bg-white flex flex-col justify-end px-6 md:px-16 lg:px-28 pb-20 lg:pb-40">
-        <h1 class="text-3xl font-semibold text-start pt-12 pb-24 lg:pb-52">Indietech</h1>
-        <h2 class="text-3xl font-bold text-start pb-5">Sign In</h2>
-       
+    <section class="flex flex-col md:flex-row flex-1 bg-abu">
+      <div class="container hidden lg:block lg:w-[720px]"></div>
+      <div
+        class="w-full lg:w-1/2 bg-putih flex flex-col justify-end px-6 md:px-16 lg:px-28 pb-20 lg:pb-40"
+      >
+        <a href="/src/LandingPage.html">
+          <h1
+            class="text-3xl font-semibold text-start pt-12 pb-24 lg:pb-52 font-bricolage"
+          >
+            Indietech
+          </h1>
+        </a>
+        <h2 class="text-3xl font-bold text-start pb-5 font-bricolage">
+          Sign In
+        </h2>
+
         <div class="border rounded-lg px-6 py-6">
           <form class="flex flex-col gap-6">
             <div class="flex flex-col gap-2">
-              <label class="block text-sm font-medium">Email</label>
+              <label class="block text-sm font-medium text-hitam_text"
+                >Email</label
+              >
               <input
                 type="email"
                 placeholder="Enter your email"
-                class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-stone-400"
+                class="w-full border border-abu rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-hitam"
               />
             </div>
 
             <div class="flex flex-col gap-2">
-              <label class="block text-sm font-medium">Password</label>
+              <label class="block text-sm font-medium text-hitam_text"
+                >Password</label
+              >
               <input
                 type="password"
                 placeholder="Enter your password"
-                class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-stone-400"
+                class="w-full border border-abu rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-hitam"
               />
             </div>
 
             <button
               type="submit"
-              class="w-full bg-black text-white py-3 rounded-md hover:bg-gray-800 transition"
+              class="w-full font-inter bg-hitam text-putih py-3 rounded-md hover:bg-abu hover:text-hitam transition"
             >
               Sign In
             </button>
 
             <div class="text-left">
-              <a href="/src/forgotPassword.html" class="text-sm text-gray-600 hover:text-black underline">
+              <a
+                href="/src/forgotPassword.html"
+                class="text-sm text-abu_text hover:text-hitam underline"
+              >
                 Forgot password?
               </a>
             </div>
 
             <button
               type="button"
-              class="w-full bg-black text-white py-3 rounded-md hover:bg-gray-800 transition"
+              class="font-inter w-full bg-hitam text-putih py-3 rounded-md hover:bg-abu hover:text-hitam transition"
             >
               Sign In Using Google
             </button>
           </form>
 
           <div class="pt-6 text-center">
-            <p class="text-sm text-gray-600">
-              Don't have an account? 
-              <a href="/src/signUp.html" class="text-black underline hover:text-gray-800">
+            <p class="text-sm text-abu_text">
+              Don't have an account?
+              <a
+                href="/src/signUp.html"
+                class="text-hitam underline hover:text-gray-500"
+              >
                 Register here
               </a>
             </p>
@@ -94,6 +122,5 @@
         </div>
       </div>
     </section>
-    
   </body>
 </html>
